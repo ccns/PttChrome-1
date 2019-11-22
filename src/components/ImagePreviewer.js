@@ -1,5 +1,5 @@
 import { stringify } from "querystring";
-import { decode } from "base58";
+import { base58_to_int } from "base58";
 
 const noop = () => {};
 
@@ -164,7 +164,7 @@ registerImageUrlResolver({
   },
   request(src) {
     const [, flickrBase58Id, flickrPhotoId] = src.match(this.regex);
-    const photoId = flickrBase58Id ? decode(flickrBase58Id) : flickrPhotoId;
+    const photoId = flickrBase58Id ? base58_to_int(flickrBase58Id) : flickrPhotoId;
 
     const apiURL = `https://api.flickr.com/services/rest/?${stringify({
       method: "flickr.photos.getInfo",
