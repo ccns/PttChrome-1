@@ -20,19 +20,21 @@ import { forceWidthStyle } from "./ForceWidthWord";
 export const TwoColorWord = ({ colorLead, colorTail, forceWidth, text }) => (
   <span
     className={cx({
-      // classes for one-color-word foreground (including blinking differences)
-      // or two-color-word foreground where only the head blinks
-      [`q${colorLead.fg}`]:
-        colorLead.fg === colorTail.fg || (colorLead.blink && !colorTail.blink),
-      [`w${colorTail.fg}`]:
-        colorLead.fg === colorTail.fg
-          ? colorLead.blink !== colorTail.blink
-          : colorLead.blink && !colorTail.blink,
-      // classes for two-color-word foreground in other cases
-      [`w${colorLead.fg}`]:
-        colorLead.fg !== colorTail.fg && (!colorLead.blink || colorTail.blink),
-      [`q${colorTail.fg}`]:
-        colorLead.fg !== colorTail.fg && (!colorLead.blink || colorTail.blink),
+      // classes for foreground
+      ...(colorLead.fg === colorTail.fg
+        ? {
+            // for one-color-word (including blinking differences)
+            [`q${colorLead.fg}`]: true,
+            [`w${colorTail.fg}`]: colorLead.blink !== colorTail.blink
+          }
+        : {
+            // for two-color-word with only the head blinks
+            [`q${colorLead.fg}`]: colorLead.blink && !colorTail.blink,
+            [`w${colorTail.fg}`]: colorLead.blink && !colorTail.blink,
+            // for two-color-word in other cases
+            [`w${colorLead.fg}`]: !colorLead.blink || colorTail.blink,
+            [`q${colorTail.fg}`]: !colorLead.blink || colorTail.blink
+          }),
       // classes for the half-word overlay
       o: colorLead.fg !== colorTail.fg || colorLead.blink !== colorTail.blink,
       ot: colorLead.blink && !colorTail.blink, // overlay the tail instead
