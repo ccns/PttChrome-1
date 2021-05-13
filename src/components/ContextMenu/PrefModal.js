@@ -43,9 +43,9 @@ const DEFAULT_PREFS = {
   // displays
   fontFitWindowWidth: false,
   fontFace: "MingLiu,SymMingLiu,monospace",
-  fontSize: 20,
+  fontSize: 23,
   termSize: { cols: 80, rows: 24 },
-  termSizeMode: "fixed-term-size",
+  termSizeMode: "max-term-size",
   bbsMargin: 0
 };
 
@@ -331,6 +331,12 @@ export const PrefModal = ({
                       >
                         {i18n("options_fixedFontSize")}
                       </option>
+                      <option
+                        key={"options_maxFontSize"}
+                        value={"max-font-size"}
+                      >
+                        {i18n("options_maxFontSize")}
+                      </option>
                     </FormControl>
                   </FormGroup>
                   {(() => {
@@ -374,6 +380,20 @@ export const PrefModal = ({
                           <FormGroup controlId="fontSize">
                             <ControlLabel>
                               {i18n("options_fontSize")}
+                            </ControlLabel>
+                            <FormControl
+                              name="fontSize"
+                              type="number"
+                              value={values.fontSize}
+                              onChange={onNumberInputChange}
+                            />
+                          </FormGroup>
+                        );
+                      case "max-font-size":
+                        return (
+                          <FormGroup controlId="fontSize">
+                            <ControlLabel>
+                              {i18n("options_fontSizeMax")}
                             </ControlLabel>
                             <FormControl
                               name="fontSize"
