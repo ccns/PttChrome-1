@@ -45,7 +45,7 @@ const DEFAULT_PREFS = {
   fontFace: "MingLiu,SymMingLiu,monospace",
   fontSize: 23,
   termSize: { cols: 80, rows: 24 },
-  termSizeMode: "max-term-size",
+  termSizeMode: "max-font-size",
   bbsMargin: 0
 };
 
