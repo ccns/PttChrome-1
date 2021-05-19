@@ -12,7 +12,7 @@ import { forceWidthStyle } from "./ForceWidthWord";
  * If both the head and the tail have the same foreground color and blinking effect,
  * the half-word overlay is not needed.
  *
- * The blinking effect is handled in 3 cases:
+ * The blinking effect is achieved by the following cases:
  * - Only the tail blinks: Overlay the head and blink only the underneath word
  * - Only the head blinks: Overlay the tail and blink only the underneath word
  * - Both blink: Overlay the head and blink both the underneath word and the overlay
