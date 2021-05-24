@@ -43,7 +43,7 @@ const DEFAULT_PREFS = {
   // displays
   fontFitWindowWidth: false,
   fontFace: "MingLiu,SymMingLiu,monospace",
-  fontSize: 23,
+  fontSize: 999,
   termSize: { cols: 80, rows: 24 },
   termSizeMode: "max-font-size",
   bbsMargin: 0
