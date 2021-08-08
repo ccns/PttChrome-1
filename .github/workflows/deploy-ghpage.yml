@@ -20,7 +20,7 @@ jobs:
               cp -v CNAME dist/CNAME
         env:
           PTTCHROME_PAGE_TITLE: "夢之大地"
-          ALLOW_SITE_IN_QUERY: "no"
+          ALLOW_SITE_IN_QUERY: "yes"
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
