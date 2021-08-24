@@ -4,7 +4,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    target-branch: "dev-updates"
+    target-branch: "dev-update"
     labels:
       - "npm"
       - "dependencies"
