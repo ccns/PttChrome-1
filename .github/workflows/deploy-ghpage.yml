@@ -21,6 +21,8 @@ jobs:
         env:
           PTTCHROME_PAGE_TITLE: "夢之大地"
           ALLOW_SITE_IN_QUERY: "yes"
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
