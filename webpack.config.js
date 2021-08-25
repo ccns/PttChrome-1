@@ -61,7 +61,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.PTTCHROME_PAGE_TITLE': JSON.stringify(process.env.PTTCHROME_PAGE_TITLE || 'PttChrome'),
-      'process.env.DEFAULT_SITE': JSON.stringify(PRODUCTION_MODE ? 'wsstelnet://ws.ccns.ncku.edu.tw/bbs' : 'wstelnet://localhost:8080/bbs'),
+      'process.env.DEFAULT_SITE': JSON.stringify(PRODUCTION_MODE ? process.env.DEFAULT_SITE || 'wsstelnet://ws.ptt.cc/bbs' : 'wstelnet://localhost:8080/bbs'),
       'process.env.ALLOW_SITE_IN_QUERY': JSON.stringify(process.env.ALLOW_SITE_IN_QUERY === 'yes'),
       'process.env.DEVELOPER_MODE': JSON.stringify(DEVELOPER_MODE),
       'process.env.GITHUB_REPOSITORY_OWNER': JSON.stringify(process.env.GITHUB_REPOSITORY_OWNER || 'ccns'),
@@ -131,13 +131,13 @@ module.exports = {
     },
     proxy: {
       '/bbs': {
-        target: 'https://ws.ptt.cc',
+        target: process.env.DEV_PROXY_TARGET || 'https://ws.ptt.cc',
         secure: true,
         ws: true,
         changeOrigin: true,
         onProxyReqWs(proxyReq) {
           // Whitelist does not accept ws.ptt.cc
-          proxyReq.setHeader('origin', 'https://term.ptt.cc');
+          proxyReq.setHeader('origin', process.env.DEV_PROXY_HEADER || 'https://term.ptt.cc');
         }
       }
     }
