@@ -121,8 +121,12 @@ module.exports = {
     new HtmlWebpackHarddiskPlugin()
   ]),
   devServer: {
-    host: '0.0.0.0',
-    contentBase: path.join(__dirname, './dist'),
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+    },
+    devMiddleware: {
+      publicPath: '/assets',
+    },
     proxy: {
       '/bbs': {
         target: 'https://ws.ptt.cc',
