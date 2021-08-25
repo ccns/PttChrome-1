@@ -105,12 +105,12 @@ module.exports = {
         {
           name: 'react',
           var: 'React',
-          path: 'umd/react.production.min.js',
+          path: `umd/react.${process.env.NODE_ENV}${PRODUCTION_MODE ? '.min' : ''}.js`,
         },
         {
           name: 'react-dom',
           var: 'ReactDOM',
-          path: 'umd/react-dom.production.min.js',
+          path: `umd/react-dom.${process.env.NODE_ENV}${PRODUCTION_MODE ? '.min' : ''}.js`,
         },
       ],
     })
