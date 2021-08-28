@@ -20,11 +20,11 @@ jobs:
               cp -v CNAME dist/CNAME
         env:
           PTTCHROME_PAGE_TITLE: "夢之大地"
-          DEFAULT_SITE: 'wsstelnet://ws.ccns.cc/bbs'
+          DEFAULT_SITE: 'wsstelnet://ws.ccns.ncku.edu.tw/bbs'
           ALLOW_SITE_IN_QUERY: "yes"
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          DEV_PROXY_TARGET: 'https://ws.ccns.cc'
+          DEV_PROXY_TARGET: 'https://ws.ccns.ncku.edu.tw'
           DEV_PROXY_HEADER: 'https://term.ccns.cc'
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
