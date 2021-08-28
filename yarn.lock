@@ -1513,10 +1513,10 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
-base58@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/base58/-/base58-1.0.1.tgz#b8974c171673933e9f95d4866774d00929dc3e09"
-  integrity sha512-vvNdu3woSbhFOW3/kXJL37W3Hn9c2+dFXmxVDSmOhc77cNL+3geNdQ6XBiZ/0jDdCBt7CUbXfKQQzptXdLipdw==
+base58@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/base58/-/base58-2.0.1.tgz#e208f00c04ad38d680d76a11c5fa096abfb86b12"
+  integrity sha512-qK6gt2fMSxN2xGOi+btI5oAnXL+vEq0AsHWHhf5jfm2hE6MwmW+2414qF96utV3Xfg3En8hEA9Q4lif4lbXcgw==
 
 base64-js@^1.0.2:
   version "1.5.1"
