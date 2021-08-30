@@ -51,44 +51,22 @@
     ]
   },
   "babel": {
-    "env": {
-      "development": {
-        "presets": [
-          [
-            "@babel/preset-env",
-            {
-              "modules": false
-            }
-          ],
-          [
-            "@babel/preset-react"
-          ]
-        ],
-        "plugins": [
-          "@babel/syntax-dynamic-import",
-          "@babel/plugin-proposal-class-properties",
-          "@babel/plugin-proposal-object-rest-spread"
-        ]
-      },
-      "production": {
-        "presets": [
-          [
-            "@babel/preset-env",
-            {
-              "modules": false
-            }
-          ],
-          [
-            "@babel/preset-react"
-          ]
-        ],
-        "plugins": [
-          "@babel/syntax-dynamic-import",
-          "@babel/plugin-proposal-class-properties",
-          "@babel/plugin-proposal-object-rest-spread"
-        ]
-      }
-    }
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": false
+        }
+      ],
+      [
+        "@babel/preset-react"
+      ]
+    ],
+    "plugins": [
+      "@babel/syntax-dynamic-import",
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
   },
   "scripts": {
     "clean": "rimraf dist/assets dist/index.html",
