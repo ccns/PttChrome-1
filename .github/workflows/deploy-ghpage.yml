@@ -19,6 +19,7 @@ jobs:
               yarn build
               cp -v CNAME dist/CNAME
         env:
+          PTTCHROME_THEME: 'ccns'
           PTTCHROME_PAGE_TITLE: "夢之大地"
           DEFAULT_SITE: 'wsstelnet://ws.ccns.ncku.edu.tw/bbs'
           ALLOW_SITE_IN_QUERY: "yes"

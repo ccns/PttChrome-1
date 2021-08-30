@@ -7,6 +7,7 @@ const CssUrlRelativePlugin = require('css-url-relative-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const WebpackCdnPlugin = require('webpack-cdn-plugin');
+const AliasPlugin = require('enhanced-resolve/lib/AliasPlugin');
 
 const DEVELOPER_MODE = process.env.NODE_ENV === 'development'
 const PRODUCTION_MODE = process.env.NODE_ENV === 'production'
@@ -53,6 +54,15 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    plugins: [new AliasPlugin('described-resolve', [{
+      name: 'Icon',
+      alias: [
+        path.resolve(__dirname, `src/icon/${process.env.PTTCHROME_THEME || 'pttchrome'}/`),
+        path.resolve(__dirname, 'src/icon/')
+      ]
+    }], 'resolve')]
   },
   devtool: 'source-map',
   optimization: {
