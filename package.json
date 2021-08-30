@@ -1,5 +1,5 @@
 {
-  "name": "pttchrome",
+  "name": "pttchrome-ccns",
   "version": "2.12.2",
   "dependencies": {
     "base58": "^2.0.1",
