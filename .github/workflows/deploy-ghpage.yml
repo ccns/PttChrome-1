@@ -17,8 +17,9 @@ jobs:
         run: |
               yarn
               yarn build
-              cp -v CNAME dist/CNAME
+              echo "$CNAME" > dist/CNAME
         env:
+          CNAME: 'term.ccns.cc'
           PTTCHROME_THEME: 'ccns'
           PTTCHROME_PAGE_TITLE: "夢之大地"
           DEFAULT_SITE: 'wsstelnet://ws.ccns.ncku.edu.tw/bbs'
