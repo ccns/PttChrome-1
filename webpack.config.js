@@ -12,6 +12,8 @@ const AliasPlugin = require('enhanced-resolve/lib/AliasPlugin');
 const DEVELOPER_MODE = process.env.NODE_ENV === 'development'
 const PRODUCTION_MODE = process.env.NODE_ENV !== 'development'
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'production'
+
 module.exports = {
   entry: {
     'pttchrome': './src/entry.js',
