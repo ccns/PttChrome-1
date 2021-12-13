@@ -19,33 +19,30 @@ import { forceWidthStyle } from "./ForceWidthWord";
  */
 export const TwoColorWord = ({ colorLead, colorTail, forceWidth, text }) => (
   <span
-    className={cx({
+    className={cx(
       // classes for foreground
-      ...(colorLead.fg === colorTail.fg
-        ? {
-            // for one-color-word (including blinking differences)
-            [`q${colorLead.fg}`]: true,
-            [`w${colorTail.fg}`]: colorLead.blink !== colorTail.blink
-          }
-        : {
-            // for two-color-word with only the head blinks
-            [`q${colorLead.fg}`]: colorLead.blink && !colorTail.blink,
-            [`w${colorTail.fg}`]: colorLead.blink && !colorTail.blink,
-            // for two-color-word in other cases
-            [`w${colorLead.fg}`]: !colorLead.blink || colorTail.blink,
-            [`q${colorTail.fg}`]: !colorLead.blink || colorTail.blink
-          }),
-      // classes for the half-word overlay
-      o: colorLead.fg !== colorTail.fg || colorLead.blink !== colorTail.blink,
-      ot: colorLead.blink && !colorTail.blink, // overlay the tail instead
-      // classes for background
-      [`b${colorLead.bg}`]: colorLead.bg === colorTail.bg,
-      [`b${colorLead.bg}b${colorTail.bg}`]: colorLead.bg !== colorTail.bg,
-      // other classes
-      qq: colorLead.blink || colorTail.blink, // blink the underneath word
-      ww: colorLead.blink && colorTail.blink, // blink the half-word overlay
-      wpadding: forceWidth
-    })}
+      colorLead.blink && !colorTail.blink // only the head blinks
+        ? [`q${colorLead.fg}`, `w${colorTail.fg}`, "ot"] // overlay the tail instead
+        : [
+            `q${colorTail.fg}`,
+            {
+              [`w${colorLead.fg}`]:
+                colorLead.fg !== colorTail.fg ||
+                colorLead.blink !== colorTail.blink
+            }
+          ],
+      {
+        // classes for the half-word overlay
+        o: colorLead.fg !== colorTail.fg || colorLead.blink !== colorTail.blink,
+        // classes for background
+        [`b${colorLead.bg}`]: colorLead.bg === colorTail.bg,
+        [`b${colorLead.bg}b${colorTail.bg}`]: colorLead.bg !== colorTail.bg,
+        // other classes
+        qq: colorLead.blink || colorTail.blink, // blink the underneath word
+        ww: colorLead.blink && colorTail.blink, // blink the half-word overlay
+        wpadding: forceWidth
+      }
+    )}
     style={forceWidthStyle(forceWidth)}
     data-text={text}
   >
