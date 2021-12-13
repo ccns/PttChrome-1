@@ -1,6 +1,6 @@
 {
   "name": "pttchrome-ccns",
-  "version": "2.12.2",
+  "version": "2.14.1-ccns.2020",
   "dependencies": {
     "base58": "^2.0.1",
     "bootstrap": "^3.3.7",
