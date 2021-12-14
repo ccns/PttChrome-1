@@ -1,5 +1,13 @@
 # PttChrome-CCNS
 
+## Branch Deprecation Note
+
+This branch (`dev-update`) has been deprecated in favor of branch [`main-ccns.2021`](https://github.com/ccns/PttChrome/tree/main-ccns.2021).
+
+Future developments will be done on the branch [`main-ccns.2021`](https://github.com/ccns/PttChrome/tree/main-ccns.2021) instead.
+
+## Introduction
+
 [![build and deploy status](https://github.com/ccns/PttChrome/actions/workflows/deploy-ghpage.yml/badge.svg)](https://github.com/ccns/PttChrome/actions/workflows/deploy-ghpage.yml)
 
 A Telnet-over-WebSocket client, forked from [robertabcd/PttChrome](https://github.com/robertabcd/PttChrome).
