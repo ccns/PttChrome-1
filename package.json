@@ -27,7 +27,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-harddisk-plugin": "^1.0.1",
     "html-webpack-plugin": "^4.5.2",
-    "husky": "^4.2.3",
+    "husky": "^7.0.2",
     "lint-staged": "^12.1.2",
     "mini-css-extract-plugin": "^1.6.2",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
@@ -90,16 +90,12 @@
       }
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "scripts": {
     "clean": "rimraf dist/assets dist/index.html",
     "prebuild": "npm run clean",
     "build": "cross-env webpack",
     "prestart": "npm run clean",
-    "start": "cross-env NODE_ENV=development webpack-dev-server"
+    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "prepare": "husky install"
   }
 }
