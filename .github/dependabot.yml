@@ -4,7 +4,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    target-branch: "dev-update"
+    target-branch: "main-ccns.2021"
     labels:
       - "npm"
       - "dependencies"
