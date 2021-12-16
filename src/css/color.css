@@ -38,6 +38,7 @@
 .b13, .b13::before, .rb13::after{background-color:#ff00ff;}
 .b14, .b14::before, .rb14::after{background-color:#00ffff;}
 .b15, .b15::before, .rb15::after{background-color:#ffffff;}
+.hl{background-color:var(--highlightBG);}
 .o{position:relative;display:inline-block;color:RGBA(0,0,0,0);background-color:RGBA(0,0,0,0);z-index:1;}
 .o::before, .o::after{content:attr(data-text);position:absolute;left:0px;width:50%;overflow:hidden;z-index:-1;}
 .o::after{left:50%;text-indent:-100%;}
