@@ -28,6 +28,7 @@ jobs:
           DEV_PROXY_HEADER: 'https://term.ccns.cc'
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+          NODE_OPTIONS: '--openssl-legacy-provider'
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
