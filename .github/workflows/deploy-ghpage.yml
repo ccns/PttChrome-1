@@ -38,3 +38,28 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: dist # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
+      - name: Rebuild for term.ccns.ncku.edu.tw
+        run: |
+              rm -vrf dist
+              yarn
+              yarn build
+              echo "$CNAME" > dist/CNAME
+        env:
+          CNAME: 'term.ccns.ncku.edu.tw'
+          PTTCHROME_THEME: 'ccns'
+          PTTCHROME_PAGE_TITLE: "夢之大地"
+          DEFAULT_SITE: 'wsstelnet://ws.ccns.ncku.edu.tw/bbs'
+          ALLOW_SITE_IN_QUERY: "yes"
+          DEV_PROXY_TARGET: 'https://ws.ccns.ncku.edu.tw'
+          DEV_PROXY_HEADER: 'https://term.ccns.ncku.edu.tw'
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPOSITORY: 'term.ccns.ncku.edu.tw'
+          NODE_OPTIONS: '--openssl-legacy-provider'
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository-name: '${{ github.repository_owner }}/term.ccns.ncku.edu.tw'
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy.
+          clean: true # Automatically remove deleted files from the deploy branch
