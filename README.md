@@ -56,6 +56,6 @@ Every merge commit not followed by a version-bumping commit are tagged, with the
 
 ### About This Branch
 
-This branch `main-ccns.2021` was rebased onto `dev` in 2021 and is maintained by CCNS.
+This branch `main-ccns.2021` was rebased onto `dev` in 2021 and is maintained by [CCNS](https://ccns.io).
 
 Versions tagged on this branch have the `-ccns.2021` suffix.
